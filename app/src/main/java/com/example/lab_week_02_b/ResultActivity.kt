@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import android.widget.Button
 
 class ResultActivity : AppCompatActivity() {
     companion object {
@@ -40,5 +41,14 @@ class ResultActivity : AppCompatActivity() {
                 colorCode?.uppercase()
             )
         }
+
+        // Tombol Back
+        val backButton = findViewById<Button>(R.id.back_button)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // supaya tidak numpuk activity
+        }
     }
 }
+
